@@ -12,13 +12,12 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    anchor-name: --some;
+    gap:30px;
 }
 .box{
     height: 200px;
     width: 200px;
-    background-color: white;
-   
+    transition: all 0.3s linear;
 }
 .red{
     background-color: rgb(90, 3, 3);
@@ -29,10 +28,20 @@ body{
 .green{
     background-color: rgb(3, 61, 3);
 }
-.box:hover{
-     anchor-name: --some;
+
+body:has(.box:hover) .box{
+    transform: scale(0.8);
+    opacity: 0.5;
 }
-.anchor{
+.box:hover{
+    transform: scale(1.2) !important;
+    opacity: 1 !important;
+
+}
+
+
+
+/* .anchor{
     border-radius: 10px;
     position: absolute;
     left: anchor(left);
@@ -44,4 +53,4 @@ body{
     position-anchor: --some;
     transition:all 0.3s linear;
     mix-blend-mode: difference;
-}
+} */
